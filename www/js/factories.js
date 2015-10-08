@@ -1,7 +1,7 @@
 /**
  * Created by Max on 01.10.2015.
  */
-angular.module('ionic.utils', [])
+angular.module('ionic.utils',[])
 
   .factory('$localstorage', ['$window', function($window) {
     return {
@@ -19,15 +19,15 @@ angular.module('ionic.utils', [])
       },
       add: function(key, value) {
         var jsonObject = JSON.parse($window.localStorage[key] || '{}');
-        var count = 0;
+        var count = 1;
         for(var key in jsonObject) {
           if(jsonObject.hasOwnProperty(key)) {
-            count++;
+            count ++;
           }
         }
-        var subkey = Object.keys(jsonObject)[0].substr(0,Object.keys(jsonObject)[0].length-1));
-        //jsonObject.push(
+        var subkey = Object.keys(jsonObject)[0].substr(0,Object.keys(jsonObject)[0].length-1);
+        jsonObject[subkey + count] = value;
+        $window.localStorage[key] = JSON.stringify(jsonObject);
       }
-        
     }
   }]);

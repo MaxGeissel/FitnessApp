@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic','ionic.utils'])
+angular.module('starter.controllers',['ionic.utils'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $http, $location, $localstorage) {
 
@@ -41,8 +41,9 @@ angular.module('starter.controllers', ['ionic','ionic.utils'])
     $localstorage.setObject('day5',{ title: 'Tag 5', description:"Pause", id: 5 });
     $localstorage.setObject('day6',{ title: 'Tag 6', description:"Pause", id: 6 });
     $localstorage.setObject('day7',{ title: 'Tag 7', description:"Pause", id: 7 });
-  }
 
+    $localstorage.setObject('task1day1data',[]);
+  }
 })
 .controller('TaskCtrl',function($scope,$localstorage){
     $scope.lastRepeats1 = "1";
@@ -51,26 +52,25 @@ angular.module('starter.controllers', ['ionic','ionic.utils'])
     $scope.lastWeight1 = "1";
     $scope.lastWeight2 = "2";
     $scope.lastWeight3 = "3";
-    
+
     $scope.data = {};
-    
+
     $scope.data.newRepeats1 = "";
     $scope.data.newRepeats2;
     $scope.data.newRepeats3;
     $scope.data.newWeight1;
     $scope.data.newWeight2;
     $scope.data.newWeight3;
-    
+
     $scope.saveNewInput = function(){
-        $localstorage.setObject('task1day1data',
-            {
+        /*$localstorage.setObject('task1day1data',
+          {
             'task1day1data1':[$scope.data],
             'task1day1data2':[$scope.data]
-            }
-        );
-        
-        console.log($localstorage.getObject('task1day1data'));
-        console.log($localstorage.add('task1day1data'));
+          }
+        );*/
+      console.log($localstorage.add('task1day1data',$scope.data));
+      console.log($localstorage.getObject('task1day1data'));
     }
   })
 
