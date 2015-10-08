@@ -1,0 +1,9 @@
+<ion-view view-title="Training">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="day in days" ng-href="#/app/day/{{day.id}}">
+        {{day.title}} | {{day.description}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
