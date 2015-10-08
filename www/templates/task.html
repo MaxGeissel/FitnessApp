@@ -6,9 +6,9 @@
       <div class="col">Repeats 3</div>
     </div>
     <div class="row">
-      <div class="col">{{lastRepeats1}}</div>
-      <div class="col">{{lastRepeats2}}</div>
-      <div class="col">{{lastRepeats3}}</div>
+      <div class="col"><input type="text" value="{{lastRepeats1}}" disabled/></div>
+      <div class="col"><input type="text" value="{{lastRepeats2}}" disabled/></div>
+      <div class="col"><input type="text" value="{{lastRepeats3}}" disabled/></div>
     </div>
     <div class="row">
       <div class="col">Weight 1</div>
@@ -16,9 +16,9 @@
       <div class="col">Weight 3</div>
     </div>
     <div class="row">
-      <div class="col">{{lastWeight1}}</div>
-      <div class="col">{{lastWeight2}}</div>
-      <div class="col">{{lastWeight3}}</div>
+      <div class="col"><input type="text" value="{{lastWeight1}}" disabled/></div>
+      <div class="col"><input type="text" value="{{lastWeight2}}" disabled/></div>
+      <div class="col"><input type="text" value="{{lastWeight3}}" disabled/></div>
     </div>
     <div class="row">
       <div class="col" style="background-color: #222222"></div>
@@ -29,9 +29,9 @@
       <div class="col">Repeats 3</div>
     </div>
     <div class="row">
-      <div class="col"><input type="text"/></div>
-      <div class="col"><input type="text"/></div>
-      <div class="col"><input type="text"/></div>
+      <div class="col"><input type="text" ng-model="data.newRepeats1"/></div>
+      <div class="col"><input type="text" ng-model="data.newRepeats2"/></div>
+      <div class="col"><input type="text" ng-model="data.newRepeats3"/></div>
     </div>
     <div class="row">
       <div class="col">Weight 1</div>
@@ -39,9 +39,9 @@
       <div class="col">Weight 3</div>
     </div>
     <div class="row">
-      <div class="col"><input type="text"/></div>
-      <div class="col"><input type="text"/></div>
-      <div class="col"><input type="text"/></div>
+      <div class="col"><input type="text" ng-model="data.newWeight1"/></div>
+      <div class="col"><input type="text" ng-model="data.newWeight2"/></div>
+      <div class="col"><input type="text" ng-model="data.newWeight3"/></div>
     </div>
     <button class="button button-block button-positive" ng-click="saveNewInput()">
       Save

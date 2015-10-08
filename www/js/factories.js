@@ -16,6 +16,18 @@ angular.module('ionic.utils', [])
       },
       getObject: function(key) {
         return JSON.parse($window.localStorage[key] || '{}');
+      },
+      add: function(key, value) {
+        var jsonObject = JSON.parse($window.localStorage[key] || '{}');
+        var count = 0;
+        for(var key in jsonObject) {
+          if(jsonObject.hasOwnProperty(key)) {
+            count++;
+          }
+        }
+        var subkey = Object.keys(jsonObject)[0].substr(0,Object.keys(jsonObject)[0].length-1));
+        //jsonObject.push(
       }
+        
     }
   }]);
