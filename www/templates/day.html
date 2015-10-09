@@ -1,7 +1,7 @@
 <ion-view view-title="Training Day">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="task in tasks" href="#/app/task/{{task.id}}">
+      <ion-item ng-repeat="task in tasks" href="#/app/day/{{currentDay}}/task/{{task.id}}">
         {{task.description}} | {{task.sets}} | {{task.repeats}}
       </ion-item>
     </ion-list>

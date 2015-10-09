@@ -42,35 +42,33 @@ angular.module('starter.controllers',['ionic.utils'])
     $localstorage.setObject('day6',{ title: 'Tag 6', description:"Pause", id: 6 });
     $localstorage.setObject('day7',{ title: 'Tag 7', description:"Pause", id: 7 });
 
-    $localstorage.setObject('task1day1data',[]);
+    $localstorage.setObject('task1day1data',[
+        {}
+    ]);
   }
 })
-.controller('TaskCtrl',function($scope,$localstorage){
-    $scope.lastRepeats1 = "1";
-    $scope.lastRepeats2 = "2";
-    $scope.lastRepeats3 = "3";
-    $scope.lastWeight1 = "1";
-    $scope.lastWeight2 = "2";
-    $scope.lastWeight3 = "3";
+.controller('TaskCtrl',function($scope,$localstorage,$stateParams){
+    
+    $scope.currentTask = $stateParams.taskId;
+    $scope.currentDay = $stateParams.dayId;
+    
+    
+    var taskData = [];
+    $scope.newData = {};
+    
+    var dataKey = 'task'+$scope.currentTask+'day'+$scope.currentDay+'data';
 
-    $scope.data = {};
-
-    $scope.data.newRepeats1 = "";
-    $scope.data.newRepeats2;
-    $scope.data.newRepeats3;
-    $scope.data.newWeight1;
-    $scope.data.newWeight2;
-    $scope.data.newWeight3;
-
+    $scope.loadData = function(){
+        taskData = $localstorage.getObject(dataKey);
+        return taskData[taskData.length-1];
+    };
+    
+    $scope.oldData = $scope.loadData();
+    
     $scope.saveNewInput = function(){
-        /*$localstorage.setObject('task1day1data',
-          {
-            'task1day1data1':[$scope.data],
-            'task1day1data2':[$scope.data]
-          }
-        );*/
-      console.log($localstorage.add('task1day1data',$scope.data));
-      console.log($localstorage.getObject('task1day1data'));
+        $localstorage.add(dataKey,$scope.newData);
+        $scope.oldData = $scope.loadData();
+        $scope.newData = {};
     }
   })
 
@@ -93,8 +91,7 @@ angular.module('starter.controllers',['ionic.utils'])
 
 .controller('DayCtrl',function($scope, $localstorage, $stateParams){
   $scope.currentDay = $stateParams.dayId;
-  console.log("CurrentDay: " + $scope.currentDay);
-
+  
   $scope.tasks = [];
   for(i = 1; i <= $localstorage.get('tasksday'+$scope.currentDay); i++)
   {

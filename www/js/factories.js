@@ -19,14 +19,14 @@ angular.module('ionic.utils',[])
       },
       add: function(key, value) {
         var jsonObject = JSON.parse($window.localStorage[key] || '{}');
-        var count = 1;
-        for(var key in jsonObject) {
-          if(jsonObject.hasOwnProperty(key)) {
+        /*var count = 1;
+        for(var key1 in jsonObject) {
+          if(jsonObject.hasOwnProperty(key1)) {
             count ++;
           }
-        }
-        var subkey = Object.keys(jsonObject)[0].substr(0,Object.keys(jsonObject)[0].length-1);
-        jsonObject[subkey + count] = value;
+        }*/
+        //var subkey = Object.keys(jsonObject)[0].substr(0,Object.keys(jsonObject)[0].length-1);
+        jsonObject.push(value);
         $window.localStorage[key] = JSON.stringify(jsonObject);
       }
     }

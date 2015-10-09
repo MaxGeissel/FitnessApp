@@ -49,7 +49,7 @@ angular.module('starter', ['ionic', 'ionic.utils', 'starter.controllers'])
       }
     }
   }).state('app.task', {
-    url: '/task/:taskId',
+    url: '/day/:dayId/task/:taskId',
     views: {
       'menuContent': {
         templateUrl: 'templates/task.html',
