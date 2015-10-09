@@ -1,47 +1,52 @@
 <ion-view view-title="Fitnessplan">
   <ion-content>
     <div class="row">
-      <div class="col">Repeats 1</div>
-      <div class="col">Repeats 2</div>
-      <div class="col">Repeats 3</div>
+        <div class="col"></div>
+        <div class="col"><input class="middle" type="text" ng-model="oldData.date" disabled></div>
+        <div class="col"></div>
     </div>
     <div class="row">
-      <div class="col"><input type="text" ng-model="oldData.repeats1" disabled/></div>
-      <div class="col"><input type="text" ng-model="oldData.repeats2" disabled/></div>
-      <div class="col"><input type="text" ng-model="oldData.repeats3" disabled/></div>
+      <div class="col"><label class="middle">Repeats 1</label></div>
+      <div class="col"><label class="middle">Repeats 2</label></div>
+      <div class="col"><label class="middle">Repeats 3</label></div>
     </div>
     <div class="row">
-      <div class="col">Weight 1</div>
-      <div class="col">Weight 2</div>
-      <div class="col">Weight 3</div>
+      <div class="col"><input class="middle"type="text" ng-model="oldData.repeats1" disabled/></div>
+      <div class="col"><input class="middle"type="text" ng-model="oldData.repeats2" disabled/></div>
+      <div class="col"><input class="middle"type="text" ng-model="oldData.repeats3" disabled/></div>
     </div>
     <div class="row">
-      <div class="col"><input type="text" ng-model="oldData.weight1" disabled/></div>
-      <div class="col"><input type="text" ng-model="oldData.weight2" disabled/></div>
-      <div class="col"><input type="text" ng-model="oldData.weight3" disabled/></div>
+      <div class="col"><label class="middle">Weight 1</label></div>
+      <div class="col"><label class="middle">Weight 2</label></div>
+      <div class="col"><label class="middle">Weight 3</label></div>
+    </div>
+    <div class="row">
+      <div class="col"><input class="middle"type="text" ng-model="oldData.weight1" disabled/></div>
+      <div class="col"><input class="middle"type="text" ng-model="oldData.weight2" disabled/></div>
+      <div class="col"><input class="middle"type="text" ng-model="oldData.weight3" disabled/></div>
     </div>
     <div class="row">
       <div class="col" style="background-color: #222222"></div>
     </div>
     <div class="row">
-      <div class="col">Repeats 1</div>
-      <div class="col">Repeats 2</div>
-      <div class="col">Repeats 3</div>
+      <div class="col"><label class="middle">Repeats 1</label></div>
+      <div class="col"><label class="middle">Repeats 2</label></div>
+      <div class="col"><label class="middle">Repeats 3</label></div>
     </div>
     <div class="row">
-      <div class="col"><input type="text" ng-model="newData.repeats1"/></div>
-      <div class="col"><input type="text" ng-model="newData.repeats2"/></div>
-      <div class="col"><input type="text" ng-model="newData.repeats3"/></div>
+      <div class="col"><input class="middle"type="text" ng-model="newData.repeats1"/></div>
+      <div class="col"><input class="middle"type="text" ng-model="newData.repeats2"/></div>
+      <div class="col"><input class="middle"type="text" ng-model="newData.repeats3"/></div>
     </div>
     <div class="row">
-      <div class="col">Weight 1</div>
-      <div class="col">Weight 2</div>
-      <div class="col">Weight 3</div>
+      <div class="col"><label class="middle">Weight 1</label></div>
+      <div class="col"><label class="middle">Weight 2</label></div>
+      <div class="col"><label class="middle">Weight 3</label></div>
     </div>
     <div class="row">
-      <div class="col"><input type="text" ng-model="newData.weight1"/></div>
-      <div class="col"><input type="text" ng-model="newData.weight2"/></div>
-      <div class="col"><input type="text" ng-model="newData.weight3"/></div>
+      <div class="col"><input class="middle" type="text" ng-model="newData.weight1"/></div>
+      <div class="col"><input class="middle" type="text" ng-model="newData.weight2"/></div>
+      <div class="col"><input class="middle" type="text" ng-model="newData.weight3"/></div>
     </div>
     <button class="button button-block button-positive" ng-click="saveNewInput()">
       Save

@@ -42,9 +42,14 @@ angular.module('starter.controllers',['ionic.utils'])
     $localstorage.setObject('day6',{ title: 'Tag 6', description:"Pause", id: 6 });
     $localstorage.setObject('day7',{ title: 'Tag 7', description:"Pause", id: 7 });
 
-    $localstorage.setObject('task1day1data',[
-        {}
-    ]);
+    for(var day = 1; day <= $localstorage.get('days'); day ++)
+    {
+        for(var task = 1; task <= $localstorage.get('tasksday'+day); task ++)
+        {
+            console.log('task'+task+'day'+day+'data');
+            $localstorage.setObject('task'+task+'day'+day+'data',[{}]);   
+        }
+    }
   }
 })
 .controller('TaskCtrl',function($scope,$localstorage,$stateParams){
@@ -64,10 +69,18 @@ angular.module('starter.controllers',['ionic.utils'])
     };
     
     $scope.oldData = $scope.loadData();
+    $scope.updateDate = function(){
+        $scope.oldData.date = $scope.oldData.day + "." + $scope.oldData.month + "." + $scope.oldData.year;
+    }
+    $scope.updateDate();
     
     $scope.saveNewInput = function(){
+        $scope.newData.year = new Date().getFullYear();
+        $scope.newData.month = new Date().getMonth();
+        $scope.newData.day = new Date().getDay();
         $localstorage.add(dataKey,$scope.newData);
         $scope.oldData = $scope.loadData();
+        $scope.updateDate();
         $scope.newData = {};
     }
   })
